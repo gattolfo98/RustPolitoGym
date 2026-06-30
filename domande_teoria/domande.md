@@ -7,3 +7,6 @@
 ## Si definisca ii concetto di Smart Pointer, quindi si fornisca un esempio (Rust o C++) che ne evidenzi ii ciclo di vita.
 
 ## Si illustrino le differenze nel linguaggio Rust tra std::channel() e std::sync_channel(), indicando quali tipi di sincronizzazione i due meccanismi permettono.
+
+
+
