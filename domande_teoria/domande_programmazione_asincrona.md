@@ -31,17 +31,17 @@ let r2 = f2.await;
 ### 12. Piccolo scenario pratico: hai 3 richieste HTTP indipendenti da fare, e ti serve il risultato di tutte e tre prima di proseguire. Quale strumento tra quelli visti useresti? E se invece ti bastasse la risposta più veloce tra le tre (es. stai interrogando 3 server mirror equivalenti)?
 
 
-### Perché nell'esempio con Arc<Mutex<i32>> non si può semplicemente condividere data tra i vari task spawnati senza Arc? Cosa impedirebbe il compilatore, e perché?
+### 13. Perché nell'esempio con Arc<Mutex<i32>> non si può semplicemente condividere data tra i vari task spawnati senza Arc? Cosa impedirebbe il compilatore, e perché?
 
-### Qual è la differenza pratica tra tokio::sync::Mutex e std::sync::Mutex? In quale dei due casi useresti l'uno o l'altro, e perché?
+### 14. Qual è la differenza pratica tra tokio::sync::Mutex e std::sync::Mutex? In quale dei due casi useresti l'uno o l'altro, e perché?
 
-### Descrivi la differenza concettuale tra i quattro canali (oneshot, mpsc, broadcast, watch) in termini di numero di mittenti e numero di riceventi.
+### 15. Descrivi la differenza concettuale tra i quattro canali (oneshot, mpsc, broadcast, watch) in termini di numero di mittenti e numero di riceventi.
 
-### Nel canale watch, cosa succede se il mittente chiama tx.send() tre volte di seguito molto rapidamente, prima che il receiver abbia il tempo di controllare rx.changed()? Il receiver vedrà tutti e tre i valori, o no? Confrontalo con cosa succederebbe nello stesso scenario con un canale broadcast.
+### 16. Nel canale watch, cosa succede se il mittente chiama tx.send() tre volte di seguito molto rapidamente, prima che il receiver abbia il tempo di controllare rx.changed()? Il receiver vedrà tutti e tre i valori, o no? Confrontalo con cosa succederebbe nello stesso scenario con un canale broadcast.
 
-### Nel canale mpsc, cosa rappresenta il numero passato a mpsc::channel(100)? Cosa succede se un task produttore chiama tx.send(...).await quando il canale è pieno?
+### 17. Nel canale mpsc, cosa rappresenta il numero passato a mpsc::channel(100)? Cosa succede se un task produttore chiama tx.send(...).await quando il canale è pieno?
 
-### Scenario pratico: stai scrivendo un server che deve notificare a tutti i client connessi (potenzialmente centinaia) ogni volta che arriva un nuovo messaggio in una chat room, e ogni client deve ricevere ogni singolo messaggio, in ordine, senza perderne nessuno. Quale canale useresti tra quelli visti, e perché escluderesti gli altri tre?
+### 18. Scenario pratico: stai scrivendo un server che deve notificare a tutti i client connessi (potenzialmente centinaia) ogni volta che arriva un nuovo messaggio in una chat room, e ogni client deve ricevere ogni singolo messaggio, in ordine, senza perderne nessuno. Quale canale useresti tra quelli visti, e perché escluderesti gli altri tre?
 
 
 
